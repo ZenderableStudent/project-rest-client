@@ -1,0 +1,50 @@
+ plugins {      
+  id 'java'    
+     id 'org.springframework.boot' version '2.2.6.RELEASE' 
+     //(2.2.6 od wersji 4.10 Gradle'a)    
+        id 'io.spring.dependency-management' version '1.0.9.RELEASE' 
+           } 
+ 
+   group = 'com.project' 
+      version = '1.0' 
+ 
+   java {   
+       sourceCompatibility = JavaVersion.VERSION_1_8   
+           targetCompatibility = JavaVersion.VERSION_1_8  
+             } 
+ 
+   compileJava {              
+             // potrzebne, gdy edytor kodu źródłowego środowiska  
+                  options.encoding = 'windows-1250' //
+                   
+                        }            
+ 
+   repositories {  
+        jcenter()  
+     } 
+ 
+   dependencies {  
+        implementation 'org.springframework.boot:spring-boot-starter' 
+              implementation 'org.springframework:spring-web' 
+                    implementation 'org.springframework.data:spring-data-commons'
+                           implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+                                  testImplementation('org.springframework.boot:spring-boot-starter-test') {  
+                                          exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'    
+                                             }  
+                                               } 
+ 
+   test { 
+          useJUnitPlatform() 
+          //aktywacja natywnego wsparcia JUnit 5 (od wersji 4.6 Gradle'a)   
+              testLogging {          showStandardStreams = true 
+              //ustawia drukowanie komunikatów w konsoli    
+                 }    }
+          
+          
+          
+          
+          
+          
+          
+          
+          
