@@ -84,7 +84,6 @@ public class StudentServiceImpl  implements StudentService {
 				 return getPage(url, restTemplate);
 				 }
 	
-	
 	private Page<Student> getPage(URI uri, RestTemplate restTemplate) {
 		 return ServiceUtil.getPage(uri, restTemplate,
 		 new ParameterizedTypeReference<RestResponsePage<Student>>() {});
@@ -105,59 +104,3 @@ public class StudentServiceImpl  implements StudentService {
 		 return serverUrl + getResourcePath(id);
 		 }
 		}
-	
-	
-	
-	
-	
-	
-	
-	/*
-	  private StudentRepository studentRepository; 
-	
-	 @Autowired  
-	 public StudentServiceImpl(StudentRepository studentRepository)
-	   {     
-		   this.studentRepository = studentRepository;  
-		   } 
-	 
-	   @Override    
-	   public Optional<Student> getStudent(Integer projektId)
-	   {    
-		   return studentRepository.findById(projektId);     
-	   }
-	 
-
-	  public Page<Student> getStudenci(Pageable pageable)
-	  {  
-		  Page<Student> pr = studentRepository.findAll(pageable);
-		  return pr;
-	  }
-	     
-	   public Page<Student> searchByNazwisko(String nazwa, Pageable pageable)
-	   {  
-		   Page<Student> pr = studentRepository.findByNazwiskoStartsWithIgnoreCase(nazwa, pageable);
-		   return pr;
-	   }
-
-	@Override
-	public Student setStudent(Student student) {
-		   Student st = student;
-	         studentRepository.save(st);
-	         
-	         return st;
-	         ///?????
-		
-	}
-
-	@Override
-	 @Transactional
-	public void deleteStudent(Integer Id) {
-		 studentRepository.deleteById(Id);
-		
-	}
-
-	
-
-	*/
-
